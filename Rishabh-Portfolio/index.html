@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RISHABH KANKARIYA</title>
+
+  <!--
+    - favicon
+  -->
+
+  <link rel="shortcut icon" href="./assets/images/rk.png" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/Original AVATAR.png" alt="RISHABH KANKARIYA" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="RISHABH KANKARIYA">RISHABH KANKARIYA</h1>
+
+          <p class="title">B.Tech CS Student (2nd Year, Lateral Entry)</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:rishabhkankariya69@gmail.com" class="contact-link" target="_blank">rishabhkankariya69@gmail.com</a>
+            </div>
+
+          </li>
+
+           <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+91-7014834315" class="contact-link">+91-7014834315</a>
+            </div>
+
+          </li> 
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+
+              <time datetime="2004-12-07">November 24, 2006</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Ujjain, Madhya Pradesh, INDIA</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://www.instagram.com/rishabhh._.xd/" class="social-link" target="_blank">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://x.com/rishabhxd11?t=N3Hb-a489Bp8k-ipr-re5g&s=09" class="social-link" target="_blank">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/rishabh-kankariya-202a93252?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link" target="_blank">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://github.com/rishabhkankariya" class="social-link" target="_blank">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Certificates</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Experience</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About Me</h2>
+        </header>
+
+      <section class="about-text">
+          <p>
+              Hey! I'm <strong>RISHABH KANKARIYA</strong>, a motivated B.Tech Computer Science student (joining 2nd year via Diploma) with a strong foundation in web and mobile development. I’ve worked with technologies like HTML, TailwindCSS, JavaScript, React, React Native, and Core Java to build practical, user-friendly solutions.
+          </p>
+
+          <p>
+              I enjoy collaborating in teams and taking responsibility — coordinating tasks, leading small projects, and turning ideas into working solutions. I focus on creating polished, functional apps that solve real-world problems, like a Queue-Free System for shops and clinics or a Trip Planner app.
+          </p>
+
+          <p>
+              I’m exploring DevOps, cloud computing, and modern development tools to build scalable, efficient systems. My goal is to bridge my programming skills with practical, impact-driven tech solutions.
+          </p>
+
+          <p>
+              I’m a lifelong learner — constantly improving my skills, experimenting with new technologies, and taking on challenges that help me grow as a developer and problem solver.
+          </p>
+
+          <p>
+              Let’s connect! I’d love to collaborate, share ideas, or work on projects that make a real impact.
+          </p>
+      </section>
+
+
+
+        <!--
+          - service
+        -->
+
+       <section class="service">
+
+        <h3 class="h3 service-title">What I'm Doing</h3>
+
+        <ul class="service-list">
+
+          <li class="service-item">
+            <div class="service-icon-box">
+              <img src="./assets/images/WD.png" alt="Web Development icon" width="40">
+            </div>
+            <div class="service-content-box">
+              <h4 class="h4 service-item-title">Web Development</h4>
+              <p class="service-item-text">
+                Creating fast, responsive, and clean websites with modern tech.
+              </p>
+            </div>
+          </li>
+
+          <li class="service-item">
+            <div class="service-icon-box">
+              <img src="./assets/images/UIUX.png" alt="UI/UX Design icon" width="40">
+            </div>
+            <div class="service-content-box">
+              <h4 class="h4 service-item-title">UI/UX Design</h4>
+              <p class="service-item-text">
+                Designing simple, sleek, and user-focused interfaces.
+              </p>
+            </div>
+          </li>
+
+          <li class="service-item">
+            <div class="service-icon-box">
+              <img src="./assets/images/SD.png" alt="Software Development icon" width="40">
+            </div>
+            <div class="service-content-box">
+              <h4 class="h4 service-item-title">Software Development</h4>
+              <p class="service-item-text">
+                Building smart solutions with clean and scalable code.
+              </p>
+            </div>
+          </li>
+
+          <li class="service-item">
+            <div class="service-icon-box">
+              <img src="./assets/images/Devops.png" alt="DevOps icon" width="40">
+            </div>
+            <div class="service-content-box">
+              <h4 class="h4 service-item-title">DevOps Enthusiast</h4>
+              <p class="service-item-text">
+                Exploring cloud, automation, and CI/CD with a passion for scalable systems.
+              </p>
+            </div>
+          </li>
+
+        </ul>
+
+      </section>
+
+
+        <h1 class="copyright"> &#169;2025 RISHABH KANKARIYA. All Rights Reserved.</h1>
+        
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="RISHABH" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+          </section>
+
+        </div>
+
+      </article>
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+       <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">MIT ADTU, Pune</h4>
+              <span>2025 — Present</span>
+              <p class="timeline-text">
+                Currently pursuing B.Tech in Computer Science (2nd Year via Lateral Entry). Expanding knowledge in web and mobile development, cloud computing, and DevOps while working on practical projects.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Govt. Polytechnic College, Ujjain</h4>
+              <span>2022 — 2024</span>
+              <p class="timeline-text">
+                Diploma in Computer Science & Engineering. Gained technical knowledge, hands-on experience, and key skills like leadership, team management, and problem-solving.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Govt. Excellence H.S. School, Madhav Nagar, Ujjain</h4>
+              <span>2020 — 2022</span>
+              <p class="timeline-text">
+                Completed Higher Secondary Education in Science stream with a focus on foundational concepts in Physics, Chemistry, and Mathematics.
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My Skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">HTML</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">CSS</h5>
+                <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Web Design</h5>
+                <data value="70">70%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Java</h5>
+                <data value="60">60%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width:60%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Web Development</h5>
+                <data value="40">40%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 40%;"></div>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="certificates">
+
+        <header>
+          <h2 class="h2 article-title">Certificates</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select Category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+            
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="https://drive.google.com/file/d/156JPFx61TJmEXnEH0qEEfbamS8Hycdzz/view?usp=sharing" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/thinking.jpg" alt="Thinking Machines" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Thinking Machines E-Coaching Ujjain</h3>
+                <p class="project-category">Java,J2EE Programming</p>
+
+              </a>
+            </li>
+            
+
+
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="https://drive.google.com/file/d/1hZtA6uDwsp2A91cg51OXiWAWXD2rbuGc/view?usp=sharing" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/manal.jpg" alt="Manal Softech Pvt Ltd" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Manal Softtech Pvt Ltd Ujjain</h3>
+
+                <p class="project-category">Basic Html5 Css3 Js JQuery Bs Programming</p>
+
+              </a>
+            </li> 
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="https://drive.google.com/file/d/15JEl24wPIXKRYrziA7nnb-nTPet1Ow6W/view?usp=sharing" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/programmer.jpg" alt="Programmers Point" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Programmers Point Ujjain</h3>
+
+                <p class="project-category">C C++ Programming</p>
+
+              </a>
+            </li>
+            
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="https://drive.google.com/file/d/1cEu65xtP2JRD9CA3xdmw1kwh-J0NvUjr/view?usp=drive_link" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/all.jpg" alt="Allsoft Infotech" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Allsoft Infotech Pvt Ltd Ujjain</h3>
+
+                <p class="project-category">Advance html5 Css3 Js Bs Programming</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="https://drive.google.com/file/d/1bzrFaiXsjOe9S1SOKKDdB6sRqTflEOiu/view?usp=sharing" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/unati.jpg" alt="Unnati Foundation" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">UNXT by Unnati Foundation</h3>
+
+                <p class="project-category">Soft Skill Development Program</p>
+
+              </a>
+            </li> 
+
+            <li class="project-item active" data-filter-item data-category="workshop">
+                <a href="https://drive.google.com/file/d/1Y4Y5-EUqoZHpP14EMLq8ql7F19nh66WX/view?usp=sharing" target="_blank">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img src="./assets/images/corextech.png" alt="DevOps Workshop Certificate" loading="lazy">
+                  </figure>
+
+                  <h3 class="project-title">DevOps 2-Hour Workshop</h3>
+
+                  <p class="project-category">Participation Certificate – CoreXTech</p>
+
+                </a>
+              </li>
+            
+              <li class="project-item active" data-filter-item data-category="workshop">
+                <a href="https://drive.google.com/file/d/1xWBzRHetCM5WsO9XC9XLnuIzaJ1zdrSz/view?usp=sharing" target="_blank">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img src="./assets/images/GenAi.png" alt="DevOps Workshop Certificate" loading="lazy">
+                  </figure>
+
+                  <h3 class="project-title">Outskill AI For Engineers - 2 days</h3>
+
+                  <p class="project-category">Participation Certificate – Outskill</p>
+
+                </a>
+              </li>
+
+
+
+          </ul>
+
+        </section>
+
+      </article>
+
+      <!--
+        - #BLOG
+      -->
+
+        <article class="blog" data-page="experience">
+
+          <header>
+            <h2 class="h2 article-title">Experience</h2>
+          </header>
+
+          <section class="timeline">
+
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+              <h3 class="h3">Experience</h3>
+            </div>
+
+            <ol class="timeline-list">
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Java Trainee – Thinking Machines</h4>
+                <span>Aug 2024 – Present · Remote</span>
+                <p class="timeline-text">
+                  Completed in-depth training on Core and Advanced Java, with hands-on projects in OOP, exception handling, file I/O, JDBC, and servlet-based web apps.
+                  Learned real-world Java development workflows and backend application architecture through mini-projects, enhancing my coding structure and scalability.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Web Development Intern – Allsoft Infotech</h4>
+                <span>Nov 2024 – Jan 2025 · On-site (Ujjain)</span>
+                <p class="timeline-text">
+                  Developed responsive front-end layouts using HTML and CSS. Contributed to live projects, focusing on clean design, mobile responsiveness, and improved user flow.
+                  Strengthened UI/UX understanding and web development best practices.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Web Development Intern – Manal Softech Pvt. Ltd.</h4>
+                <span>May 2023 – Jun 2023 · On-site (Ujjain)</span>
+                <p class="timeline-text">
+                  Worked on real-world websites using HTML, CSS, and JavaScript. Focused on responsive design, layout structure, and enhancing user experience.
+                  Sharpened front-end skills and practical problem-solving through real projects.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Programming Trainee – Programmers Point</h4>
+                <span>Sep 2022 – Mar 2023 · On-site (Ujjain)</span>
+                <p class="timeline-text">
+                  Gained solid understanding of C and C++ with emphasis on core programming principles, OOP, pointers, memory management, and logic building.
+                  Built a strong programming foundation with hands-on code practice and concept-focused training.
+                </p>
+              </li>
+
+            </ol>
+
+          </section>
+        </article>
+
+
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <!-- Map Section -->
+        <section class="mapbox" data-mapbox style="margin-bottom: 2rem;">
+          <figure style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 12px;">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49747.66911691488!2d75.75602046494713!3d23.16907220262882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39637469de00ff23%3A0x7f82abdf7899d412!2sUjjain%2C%20Madhya%20Pradesh!5e1!3m2!1sen!2sin!4v1750142568651!5m2!1sen!2sin"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </figure>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-form" style="
+              position: relative;
+              padding: 3rem 1rem;
+              background: linear-gradient(135deg, #fff8e1, #ffe57f);
+              overflow: hidden;
+              font-family: 'Poppins', sans-serif;
+              border-radius: 12px;
+            ">
+
+          <!-- Animated Background -->
+          <div style="
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: radial-gradient(rgba(255, 215, 100, 0.15) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+          "></div>
+
+          <!-- Section Title -->
+          <h3 class="h3 form-title" style="
+            text-align: center;
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 2rem;
+            z-index: 2;
+            position: relative;
+          ">
+            Contact Form
+          </h3>
+
+          <!-- Google Form -->
+          <div style="
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            z-index: 2;
+            position: relative;
+          ">
+            <iframe 
+              src="https://docs.google.com/forms/d/e/1FAIpQLSfIehg2p2gG0-7cNuoa2lSbZnUANmEy6kaXDdF6UQHBaKiqCQ/viewform?embedded=true"
+              style="width: 100%; min-height: 800px; border: none;"
+              loading="lazy">
+              Loading…
+            </iframe>
+          </div>
+
+        </section>
+
+        <!-- Responsive Adjustments -->
+        <style>
+          @media (max-width: 1024px) {
+            .contact-form h3.form-title {
+              font-size: 1.8rem;
+            }
+          }
+
+          @media (max-width: 768px) {
+            .contact-form h3.form-title {
+              font-size: 1.5rem;
+            }
+
+            .contact-form iframe {
+              min-height: 1200px;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .contact-form h3.form-title {
+              font-size: 1.3rem;
+            }
+
+            .contact-form iframe {
+              min-height: 1500px;
+            }
+          }
+        </style>
+
+      </article>
+
+
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
