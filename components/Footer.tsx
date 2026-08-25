@@ -9,7 +9,7 @@ export default function Footer() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 500);
+      setShowScrollTop(window.scrollY > 400);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -23,24 +23,25 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-8 sm:py-10 md:py-12 border-t-2 border-(--border-color) relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="w-full text-base sm:text-lg font-semibold opacity-70 tracking-wide text-center md:text-left flex flex-col sm:flex-row gap-1 sm:gap-2 items-center justify-center">
-          <span className="inline-flex items-center gap-1 sm:gap-2">
-            <BiCopyright size={20} className="sm:w-6 sm:h-6" />
-            {currentYear} Rishabh Kankariya.
-          </span>
-          <span className="hidden sm:inline"> </span>
-          <span>All rights reserved.</span>
+    <footer className="py-10 border-t border-(--border-color) relative bg-(--bg-color) text-xs sm:text-sm text-(--text-muted)">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p className="flex items-center gap-1.5 font-medium">
+          <BiCopyright size={16} />
+          <span>{currentYear} Rishabh Kankariya. Designed with modern web standards.</span>
         </p>
+
+        <div className="flex items-center gap-2 font-mono text-xs">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#10b981]" />
+          <span>All Systems Operational</span>
+        </div>
 
         {showScrollTop && (
           <button
-            className="fixed scrolltotop-shadow bottom-4 sm:bottom-6 md:bottom-8 right-2 sm:right-3 md:right-5 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 text-(--text-color) flex items-center justify-center cursor-pointer rounded-sm border-2 border-(--border-color) hover:text-(--alter-color) z-80"
+            className="fixed bottom-6 right-6 w-11 h-11 bg-amber-400 text-[#141413] flex items-center justify-center rounded-full shadow-[0_4px_20px_rgba(243,180,74,0.4)] hover:scale-110 active:scale-95 transition-transform z-50 cursor-pointer"
             onClick={scrollToTop}
             aria-label="Scroll to top"
           >
-            <HiArrowUp size={20} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
+            <HiArrowUp size={18} />
           </button>
         )}
       </div>

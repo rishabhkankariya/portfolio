@@ -1,198 +1,119 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useTheme } from "@/contexts/ThemeContext";
-import { HiSun } from "react-icons/hi";
-import { AiFillMoon } from "react-icons/ai";
+import React, { useState } from "react";
 import Link from "next/link";
-import { FaTimes } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaSun, FaMoon, FaBars, FaTimes } from "react-icons/fa";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
   const { theme, toggleTheme } = useTheme();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["portfolio", "about", "experience", "certificates", "projects", "skills", "contact"];
-      const scrollPosition = window.scrollY;
-
-      // Fallback for top of page
-      if (scrollPosition < 50) {
-        setActiveSection("portfolio");
-        return;
-      }
-
-      // Fallback for bottom of page
-      if (
-        window.innerHeight + window.scrollY >=
-        document.documentElement.scrollHeight - 100
-      ) {
-        setActiveSection("contact");
-        return;
-      }
-
-      for (let i = 0; i < sections.length; i++) {
-        const section = document.getElementById(sections[i]);
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          // Check if section is currently intersecting the active viewport area (taking 80px header + buffer into account)
-          if (rect.top <= 120 && rect.bottom > 120) {
-            setActiveSection(sections[i]);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
-  ) => {
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) {
-      const offsetTop =
-        target.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth",
-      });
-    }
-    closeMenu();
-  };
-
-  const closeMenu = () => {
-    setIsClosing(true);
-    setTimeout(() => {
-      setIsMenuOpen(false);
-      setIsClosing(false);
-    }, 300); // match animation duration
-  };
+  const navItems = [
+    { label: "ABOUT", href: "#about" },
+    { label: "PRACTICE", href: "#capabilities" },
+    { label: "WORK", href: "#projects" },
+    { label: "ROADMAP", href: "#experience" },
+    { label: "CONTACT", href: "#contact", isContact: true },
+  ];
 
   return (
-    <header className="sticky top-0 left-0 right-0 bg-(--bg-color) border-b-2 border-(--border-color) z-50 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto border-r-2 border-(--border-color) border-l-2 px-8 py-5 flex items-center justify-between">
-        {/* Logo */}
-        <div className="logo">
-          <Link href="/" className="flex justify-center items-center gap-1.5">
-            <div className="w-10 h-10 title-font card-top-bg border-2 border-(--border-color) flex items-center justify-center font-bold text-xl logo-shadow rounded-sm">
-              R
+    <>
+      <motion.header
+        initial={{ y: -40, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: [0.34, 1.56, 0.64, 1] }}
+        className="fixed top-2.5 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 pointer-events-none"
+      >
+        <div className="w-full max-w-3xl flex items-center justify-between px-4 py-1.5 rounded-full bg-[#FFFDF5] dark:bg-[#1E293B] border-2 border-[#1E293B] dark:border-white shadow-[3px_3px_0px_0px_#1E293B] dark:shadow-[3px_3px_0px_0px_#F8FAFC] pointer-events-auto transition-all">
+          {/* Brand Monogram Sticker Pill */}
+          <Link href="#hero" className="flex items-center gap-2.5 group">
+            <div className="w-7 h-7 rounded-full bg-[#8B5CF6] border-2 border-[#1E293B] flex items-center justify-center text-white text-xs font-black shadow-[2px_2px_0px_0px_#1E293B] group-hover:rotate-12 transition-transform">
+              RK
             </div>
-            <span className="text-(--text-color) text-xl font-bold">ishabh</span>
+            <div className="flex flex-col">
+              <span className="text-xs sm:text-sm font-extrabold tracking-tight text-[#1E293B] dark:text-white group-hover:text-[#8B5CF6] transition-colors">
+                Rishabh Kankariya
+              </span>
+              <span className="text-[10px] font-mono text-[#64748B] dark:text-[#94A3B8] font-bold hidden sm:inline">
+                DevOps & Cloud Engineer
+              </span>
+            </div>
           </Link>
-        </div>
 
-        <nav className="hidden lg:flex gap-2 items-center">
-          {["portfolio", "about", "experience", "certificates", "projects", "skills", "contact"].map(
-            (section) => (
+          {/* Playful Geometric Navigation Pills */}
+          <nav className="hidden md:flex items-center gap-2 text-xs font-extrabold tracking-wider">
+            {navItems.map((item) => (
               <Link
-                key={section}
-                href={`#${section}`}
-                className={`text-sm font-bold uppercase tracking-wider px-3 py-1.5 transition-all duration-200 rounded-sm ${
-                  activeSection === section
-                    ? "logo-shadow border-2 border-(--border-color)"
-                    : "hover:logo-shadow hover:border-2 hover:border-(--border-color)"
+                key={item.label}
+                href={item.href}
+                className={`px-3.5 py-1.5 rounded-full transition-all duration-200 border-2 ${
+                  item.isContact
+                    ? "bg-[#FBBF24] text-[#1E293B] border-[#1E293B] shadow-[2px_2px_0px_0px_#1E293B] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[3px_3px_0px_0px_#1E293B]"
+                    : "border-transparent text-[#1E293B] dark:text-[#F8FAFC] hover:border-[#1E293B] dark:hover:border-white hover:bg-[#F472B6]/15 hover:shadow-[2px_2px_0px_0px_#1E293B] dark:hover:shadow-[2px_2px_0px_0px_#F8FAFC]"
                 }`}
-                onClick={(e) => handleNavClick(e, `#${section}`)}
               >
-                {section === "portfolio" ? "HERO" : section.toUpperCase()}
+                {item.label}
               </Link>
-            )
-          )}
+            ))}
+          </nav>
 
-          {/* Theme toggle */}
-          <button
-            onClick={toggleTheme}
-            className="p-2 ml-0 lg:ml-4 flex items-center justify-center text-(--text-color) card-shadow rounded-sm border-2 border-(--border-color) hover:text-(--alter-color)"
-            aria-label="Toggle theme"
-          >
-            {theme === "light" ? <AiFillMoon size={24} /> : <HiSun size={24} />}
-          </button>
-        </nav>
-
-        {/* Mobile menu toggle */}
-        <button
-          className="lg:hidden flex flex-col gap-1 bg-none border-none cursor-pointer p-2"
-          onClick={() => setIsMenuOpen(true)}
-          aria-label="Menu"
-        >
-          <span className="w-6 h-0.5 bg-(--text-color) block transition-colors duration-300"></span>
-          <span className="w-6 h-0.5 bg-(--text-color) block transition-colors duration-300"></span>
-          <span className="w-6 h-0.5 bg-(--text-color) block transition-colors duration-300"></span>
-        </button>
-      </div>
-
-      {/* Mobile Navigation Overlay */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-200">
-          <div
-            className={`absolute top-0 right-0 h-full w-3/4 sm:w-2/3 bg-(--bg-color) border-(--base-color) rounded-sm mt-1 border-4 flex flex-col items-center gap-6 shadow-xl 
-                  ${isClosing ? "animate-slideOut" : "animate-slideIn"}`}
-          >
-            {/* Logo */}
-            <div className="logo w-full mt-8 pb-6 border-b-4 border-(--base-color)">
-              <Link
-                href="/"
-                className="flex justify-center items-center gap-1.5"
-              >
-                <div className="w-10 h-10 title-font card-top-bg border-2 border-(--border-color) flex items-center justify-center font-bold text-xl logo-shadow rounded-sm">
-                  R
-                </div>
-                <span className="text-(--text-color) text-xl font-bold">
-                  ishabh
-                </span>
-              </Link>
-            </div>
-
-            {/* Nav links */}
-            {["portfolio", "about", "experience", "certificates", "projects", "skills", "contact"].map(
-              (section) => (
-                <Link
-                  key={section}
-                  href={`#${section}`}
-                  className={`w-3/4 text-lg font-bold uppercase tracking-wider px-6 py-3 rounded-md text-center transition-all duration-200
-                    ${
-                      activeSection === section
-                        ? "logo-shadow border-2 border-(--border-color)"
-                        : "hover:logo-shadow hover:border-2 hover:border-(--border-color)"
-                    }`}
-                  onClick={(e) => handleNavClick(e, `#${section}`)}
-                >
-                  {section === "portfolio" ? "HERO" : section.toUpperCase()}
-                </Link>
-              )
-            )}
-
-            {/* Theme toggle */}
-            <button
+          {/* Quick Actions (Theme Switcher + Mobile Menu) */}
+          <div className="flex items-center gap-2.5">
+            {/* Playful Theme Switcher Button */}
+            <motion.button
+              whileHover={{ scale: 1.1, rotate: 8 }}
+              whileTap={{ scale: 0.9 }}
               onClick={toggleTheme}
-              className="p-3 flex items-center justify-center text-(--text-color) card-shadow rounded-md border-2 border-(--border-color) hover:text-(--alter-color)"
+              className="w-8 h-8 rounded-full bg-[#FBBF24] border-2 border-[#1E293B] dark:border-white shadow-[2px_2px_0px_0px_#1E293B] dark:shadow-[2px_2px_0px_0px_#F8FAFC] text-[#1E293B] flex items-center justify-center cursor-pointer transition-colors"
+              aria-label="Toggle Theme"
             >
-              {theme === "light" ? (
-                <AiFillMoon size={28} />
-              ) : (
-                <HiSun size={28} />
-              )}
-            </button>
+              {theme === "dark" ? <FaSun size={13} /> : <FaMoon size={12} />}
+            </motion.button>
 
-            {/* Close button */}
+            {/* Mobile Menu Button */}
             <button
-              className="absolute top-2 right-2 text-(--text-color) p-2 bg-(--primary-color) rounded-full hover:logo-shadow"
-              onClick={closeMenu}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden w-8 h-8 rounded-full bg-white dark:bg-[#334155] text-[#1E293B] dark:text-white border-2 border-[#1E293B] dark:border-white shadow-[2px_2px_0px_0px_#1E293B] flex items-center justify-center cursor-pointer"
+              aria-label="Toggle Mobile Menu"
             >
-              <FaTimes size={18} />
+              {mobileMenuOpen ? <FaTimes size={13} /> : <FaBars size={13} />}
             </button>
           </div>
         </div>
-      )}
-    </header>
+      </motion.header>
+
+      {/* Playful Mobile Menu Drawer */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: -20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -20 }}
+            transition={{ type: "spring", stiffness: 400, damping: 25 }}
+            className="fixed inset-x-4 top-20 z-40 bg-[#FFFDF5] dark:bg-[#1E293B] border-3 border-[#1E293B] dark:border-white rounded-3xl p-6 shadow-[8px_8px_0px_0px_#1E293B] dark:shadow-[8px_8px_0px_0px_#F8FAFC] flex flex-col gap-4 md:hidden"
+          >
+            <div className="flex flex-col gap-3 font-extrabold text-lg">
+              {navItems.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-4 py-2.5 rounded-2xl bg-white dark:bg-[#0F172A] border-2 border-[#1E293B] dark:border-white shadow-[3px_3px_0px_0px_#1E293B] text-[#1E293B] dark:text-white hover:bg-[#FBBF24] hover:text-[#1E293B] transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+
+            <div className="pt-4 border-t-2 border-dashed border-[#1E293B]/20 flex items-center justify-between text-xs font-mono font-bold">
+              <span>RK.DEV // 2026</span>
+              <span className="text-[#8B5CF6]">PLAYFUL GEOMETRIC</span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

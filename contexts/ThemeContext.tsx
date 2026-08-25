@@ -18,16 +18,25 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     const savedTheme = localStorage.getItem('theme') as Theme
     if (savedTheme) {
       setTheme(savedTheme)
+    } else {
+      setTheme('light')
     }
   }, [])
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark')
+      document.documentElement.classList.remove('light')
+    } else {
+      document.documentElement.classList.add('light')
+      document.documentElement.classList.remove('dark')
+    }
     localStorage.setItem('theme', theme)
   }, [theme])
 
   const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light')
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'))
   }
 
   return (
@@ -44,4 +53,3 @@ export function useTheme() {
   }
   return context
 }
-

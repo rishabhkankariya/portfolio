@@ -1,133 +1,207 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import KineticHeading from "./KineticHeading";
+import { Spotlight } from "./motion-primitives/Spotlight";
+import { Tilt } from "./motion-primitives/Tilt";
+import { ShimmerButton } from "./ShimmerButton";
 
 const projects = [
   {
     name: "Smart Bus Pass System",
+    category: "Cloud & DevOps",
+    featured: true,
     description:
-      "A cloud-based digital pass system featuring secure pass management, payment integration, automated PDF receipt generation, email notifications, and an admin analytics dashboard.",
+      "A complete cloud-based digital pass platform featuring secure user authentication, Razorpay payment gateway, automated PDF receipt generation, transactional email dispatch, and an administrative analytics dashboard.",
     icons: [
-      "@icons/react.svg",
-      "@icons/javascript.svg",
-      "@icons/mysql.svg",
-      "@icons/aws.svg",
-      "@icons/docker.svg",
+      "/icons/react.svg",
+      "/icons/javascript.svg",
+      "/icons/mysql.svg",
+      "/icons/aws.svg",
+      "/icons/docker.svg",
     ],
     github: "https://github.com/rishabhkankariya/bus-pass-system",
     live: "https://smart-bus-pass-system.pages.dev/",
   },
   {
     name: "AI Chatbot Platform",
+    category: "AI & Automation",
+    featured: false,
     description:
-      "An automated chatbot platform featuring user authentication, knowledge base management, semantic search capabilities, and cloud-hosted API services.",
+      "An automated intelligent chatbot platform with knowledge base embeddings, semantic search, user sessions, and cloud-hosted API services.",
     icons: [
-      "@icons/react.svg",
-      "@icons/javascript.svg",
-      "@icons/python.svg",
-      "@icons/aws.svg",
-      "@icons/docker.svg",
+      "/icons/react.svg",
+      "/icons/javascript.svg",
+      "/icons/python.svg",
+      "/icons/aws.svg",
+      "/icons/docker.svg",
     ],
     github: "https://github.com/rishabhkankariya",
     live: "https://ai-chatbot-system-by-rishabh-kankariya.pages.dev/login",
   },
   {
     name: "ZEN Project Hub",
+    category: "Full-Stack",
+    featured: false,
     description:
-      "Shared code collaboration, system architecture templates, and script repository for engineering innovators across the Zone Of Engineering Innovators.",
+      "Shared engineering code repository, architecture design templates, and workflow collaboration tools for innovators across the Zone Of Engineering Innovators.",
     icons: [
-      "@icons/react.svg",
-      "@icons/javascript.svg",
-      "@icons/mysql.svg",
+      "/icons/react.svg",
+      "/icons/javascript.svg",
+      "/icons/mysql.svg",
     ],
     github: "https://github.com/rishabhkankariya/ZEN_Project",
     live: "",
   },
   {
     name: "Company Discovery Engine",
+    category: "AI & Automation",
+    featured: false,
     description:
-      "Automated web crawler, indexing parser, and pipeline discovery engine configured with GitHub Actions automated testing.",
+      "Automated web crawler, data indexer, and company discovery engine configured with GitHub Actions automated CI/CD testing pipelines.",
     icons: [
-      "@icons/javascript.svg",
-      "@icons/mysql.svg",
-      "@icons/github.svg",
+      "/icons/javascript.svg",
+      "/icons/mysql.svg",
+      "/icons/github.svg",
     ],
     github: "https://github.com/adityarajlonkar09-commits/CDE",
     live: "",
   },
 ];
 
-export default function Projects() {
+const categories = ["All", "Cloud & DevOps", "AI & Automation", "Full-Stack"];
+
+export default function TechnicalSkills() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const filteredProjects = selectedCategory === "All"
+    ? projects
+    : projects.filter((p) => p.category === selectedCategory);
+
   return (
-    <section id="projects" className="bg-[--bg-color]">
-      <div className="max-w-7xl pt-8 sm:pt-10 md:pt-12 pb-16 sm:pb-20 md:pb-24 mx-4 sm:mx-6 md:mx-8 border-color border-b-4">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl title-font text-(--primary-color) font-bold mb-4 sm:mb-6 md:mb-8 tracking-wider">
-          PROJECTS.
-        </h2>
-        <hr className="w-full border-color border-2" />
+    <section id="projects" className="py-12 sm:py-18 border-b border-(--border-color)">
+      <div className="w-full">
+        <KineticHeading
+          title="Selected Projects & Architectures"
+          subtitle="Cloud-native applications, automated DevOps engines, and full-stack solutions"
+        />
 
-        <div className="mt-8 sm:mt-12 md:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group project-card-shadow border-color border-3 rounded-lg p-4 sm:p-5 md:p-6 flex flex-col justify-between transition-all duration-200 hover:bg-(--base-color)"
+        {/* Filter Category Tabs */}
+        <div className="flex flex-wrap items-center gap-2 mb-8">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`relative px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-colors ${
+                selectedCategory === cat
+                  ? "text-slate-950 font-bold"
+                  : "text-(--text-muted) hover:text-(--text-color)"
+              }`}
             >
-              <div>
-                <h3 className="tagline-font font-light text-xl sm:text-2xl mb-2 sm:mb-3 text-(--text-color) group-hover:text-white transition-colors duration-200">
-                  {project.name}
-                </h3>
-                <p className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 md:mb-8 leading-relaxed text-(--text-color) group-hover:text-white transition-colors duration-200">
-                  <span className="font-bold underline text-(--primary-color) group-hover:text-white transition-colors duration-200">OVERVIEW:</span>{" "}
-                  {project.description}
-                </p>
-
-                <h3 className="font-bold mb-2 sm:mb-3 underline text-sm sm:text-base text-(--text-color) group-hover:text-white transition-colors duration-200">
-                  TOOLS:{" "}
-                </h3>
-                <div className="flex flex-wrap gap-2 sm:gap-3">
-                  {project.icons.map((icon, i) => (
-                    <Image
-                      key={i}
-                      src={icon.replace("@icons", "/icons")}
-                      alt="tech icon"
-                      width={40}
-                      height={40}
-                      className="object-contain w-8 h-8 sm:w-10 sm:h-10"
-                    />
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex gap-4 mt-6">
-                <Link
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 group-hover:text-white group-hover:bg-gray-700 transition-all duration-300 flex items-center justify-center gap-2 px-3 sm:px-4 py-2 border-2 border-color rounded-md text-sm sm:text-md font-semibold text-(--text-color)"
-                >
-                  <span>GitHub</span>
-                  <FaGithub size={18} />
-                </Link>
-
-                {project.live && (
-                  <Link
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 shimmer-button flex items-center justify-center gap-2 px-3 sm:px-4 py-2 text-sm sm:text-md font-semibold text-(--text-color)"
-                  >
-                    <span className="relative z-10 flex items-center gap-2">
-                      Live Link <FaExternalLinkAlt size={14} />
-                    </span>
-                  </Link>
-                )}
-              </div>
-            </div>
+              {selectedCategory === cat && (
+                <motion.div
+                  layoutId="activeProjectPill"
+                  className="absolute inset-0 bg-amber-400 rounded-full -z-10 shadow-[0_2px_12px_rgba(245,158,11,0.35)]"
+                  transition={{ type: "spring", stiffness: 380, damping: 28 }}
+                />
+              )}
+              {cat}
+            </button>
           ))}
         </div>
+
+        {/* Projects Grid */}
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project) => (
+              <motion.div
+                key={project.name}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                className={project.featured && selectedCategory === "All" ? "md:col-span-2" : ""}
+              >
+                <Tilt rotationFactor={5}>
+                  <Spotlight className="ui-card is-interactive p-6 sm:p-8 rounded-[24px] flex flex-col justify-between h-full group border border-(--border-color)">
+                    <div>
+                      <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
+                        <div className="flex items-center gap-2.5">
+                          <h3 className="font-bold text-xl sm:text-2xl text-(--text-color) tracking-tight">
+                            {project.name}
+                          </h3>
+                          {project.featured && (
+                            <span className="text-[10px] uppercase font-mono font-bold px-2.5 py-0.5 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-700 dark:text-amber-300">
+                              Featured
+                            </span>
+                          )}
+                        </div>
+                        <span className="text-[11px] font-mono px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-[#C0EB3A] font-semibold">
+                          {project.category}
+                        </span>
+                      </div>
+
+                      <p className="text-sm sm:text-base text-(--text-muted) mb-6 leading-relaxed">
+                        {project.description}
+                      </p>
+
+                      <div className="mb-4">
+                        <span className="text-xs font-bold text-(--text-color) block mb-2 opacity-80 font-mono uppercase tracking-wider">
+                          Technologies:
+                        </span>
+                        <div className="flex flex-wrap gap-2">
+                          {project.icons.map((icon, i) => (
+                            <div
+                              key={i}
+                              className="p-2 rounded-xl bg-black/[0.03] dark:bg-white/[0.06] border border-(--border-color) hover:scale-110 transition-transform shadow-xs"
+                            >
+                              <Image
+                                src={icon}
+                                alt="tech stack"
+                                width={26}
+                                height={26}
+                                className="object-contain w-6 h-6 sm:w-6.5 sm:h-6.5"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-3 mt-6 pt-5 border-t border-(--border-color)">
+                      <ShimmerButton
+                        href={project.github}
+                        variant="secondary"
+                        external
+                        className="flex-1"
+                        icon={<FaGithub size={15} />}
+                      >
+                        GitHub Repo
+                      </ShimmerButton>
+
+                      {project.live && (
+                        <ShimmerButton
+                          href={project.live}
+                          variant="primary"
+                          external
+                          className="flex-1"
+                          icon={<FaExternalLinkAlt size={11} />}
+                        >
+                          Live Demo
+                        </ShimmerButton>
+                      )}
+                    </div>
+                  </Spotlight>
+                </Tilt>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );

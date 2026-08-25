@@ -1,72 +1,131 @@
 "use client";
 
-import { HiArrowDown } from "react-icons/hi";
 import Image from "next/image";
-import { FaFileDownload } from "react-icons/fa";
-import Link from "next/link";
+import { FaFileDownload, FaArrowRight } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { ShimmerButton } from "./ShimmerButton";
+import CityscapeBanner from "./CityscapeBanner";
 
 export default function Hero() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.05,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 16 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  };
+
   return (
-    <section id="portfolio" className="flex items-center justify-center">
-      <div className="px-4 sm:px-6 md:px-8 pt-12 md:pt-16 pb-20 md:pb-24 w-full relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-          <div className="flex flex-col gap-4 md:gap-6">
-            <h1 className="title-font text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-wider">
-              HI! I'M RISHABH KANKARIYA
-            </h1>
-            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl default-font font-bold -mt-2">
-              <span className="text-(--primary-color)">|</span>Cloud & DevOps
-              Explorer
-            </h2>
+    <section id="portfolio" className="flex flex-col justify-center pt-8 sm:pt-12 pb-6">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+        className="w-full relative space-y-8"
+      >
+        {/* Top Hero Bento Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start w-full max-w-full">
+          {/* Left Column: Simple, Punchy Display Headline */}
+          <div className="lg:col-span-7 min-w-0 flex flex-col gap-4">
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-2.5">
+              {/* Availability Badge */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/15 text-slate-900 dark:text-amber-300 border border-amber-500/40 text-xs font-bold shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse shadow-[0_0_8px_#f59e0b]"></span>
+                <span>Open for Opportunities</span>
+              </div>
 
-            <div className="mt-2 md:mt-4">
-              <p className="text-lg sm:text-xl md:text-2xl text-(--primary-color) tagline-font uppercase tracking-widest">
-                SPECIALIZED IN
-              </p>
-              <p className="text-base sm:text-lg md:text-xl font-semibold leading-relaxed">
-                Automating pipelines, building cloud architectures, container orchestration, and full-stack development.
-              </p>
-            </div>
+              {/* High-Contrast Stack Badge with Crisp Colors */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-200/70 dark:bg-slate-800/80 text-slate-900 dark:text-slate-100 text-xs font-mono font-bold border border-slate-300 dark:border-slate-700 shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-sky-500 shadow-[0_0_6px_#0284c7]"></span>
+                <span>AWS • Kubernetes • Terraform • Docker</span>
+              </div>
+            </motion.div>
 
-            <Link
-              href="https://github.com/rishabhkankariya"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="shimmer-button mt-4 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-md font-semibold uppercase tracking-wider flex items-center gap-2 w-fit text-(--text-color)"
+            {/* Simple, Straightforward Headline */}
+            <motion.h1
+              variants={itemVariants}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-extrabold leading-[1.15] tracking-tight text-slate-950 dark:text-white break-words"
             >
-              <FaFileDownload size={20} className="relative z-10" />
-              <span className="relative z-10">DOWNLOAD RESUME</span>
-            </Link>
+              Hi, I'm Rishabh. <br />
+              <span className="text-amber-500">I build cloud infrastructure</span> & DevOps pipelines.
+            </motion.h1>
           </div>
 
-          <div className="flex justify-center items-center order-first md:order-last">
-            {/* img-fx-wrapper: all effects scoped here only */}
-            <div className="img-fx-wrapper img-fx-glass-border w-64 sm:w-72 md:w-80 lg:w-[24rem] h-64 sm:h-72 md:h-80 lg:h-96 rounded-lg border-4 border-[rgba(121,40,202,0.5)]">
-              {/* Radial glow behind image */}
-              <div className="img-fx-glow" />
-              {/* Wireframe rings */}
-              <div className="img-fx-ring" />
-              <div className="img-fx-ring" />
-              <div className="img-fx-ring" />
-              {/* Actual image — CRT scanlines + grid grid are ::before/::after on wrapper */}
-              <div className="img-fx-inner portfolio-shadow">
+          {/* Right Column: Clear, Straightforward Description & Shimmer Actions */}
+          <div className="lg:col-span-5 min-w-0 flex flex-col gap-5 lg:pt-2">
+            <motion.p
+              variants={itemVariants}
+              className="text-sm sm:text-base md:text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-medium"
+            >
+              Passionate about automating CI/CD pipelines, container orchestration with Kubernetes, and deploying scalable architectures on AWS.
+            </motion.p>
+
+            {/* Glassmorphic Shimmer Buttons with Shining Lights */}
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-3">
+              <ShimmerButton
+                href="#projects"
+                variant="primary"
+                icon={<FaArrowRight size={11} />}
+              >
+                View selected work
+              </ShimmerButton>
+
+              <ShimmerButton
+                href="#about"
+                variant="secondary"
+              >
+                About me ↗
+              </ShimmerButton>
+
+              <ShimmerButton
+                href="/Profile (1).pdf"
+                variant="secondary"
+                external
+                icon={<FaFileDownload size={12} className="text-amber-400" />}
+              >
+                Resume
+              </ShimmerButton>
+            </motion.div>
+
+            {/* Profile Avatar Card */}
+            <motion.div variants={itemVariants} className="pt-1 flex items-center gap-4">
+              <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-amber-400/80 shadow-md flex-shrink-0">
                 <Image
+                  src="/images/profile_image.png"
+                  alt="Rishabh Kankariya"
+                  width={56}
+                  height={56}
                   className="w-full h-full object-cover"
-                  src={"/images/profile_image.png"}
-                  alt={"Profile Image"}
-                  width={400}
-                  height={400}
-                  priority
                 />
               </div>
-            </div>
+              <div className="text-xs">
+                <div className="font-bold text-sm text-slate-900 dark:text-white">Rishabh Kankariya</div>
+                <div className="text-slate-600 dark:text-slate-400 mt-0.5 font-medium">B.Tech CSE • Cloud & DevOps Engineer • India</div>
+              </div>
+            </motion.div>
           </div>
         </div>
 
-        <div className="absolute card-shadow rounded-md border-color border-2 p-2 right-1/2 -bottom-4 animate-bounce cursor-pointer hidden md:block">
-          <HiArrowDown size={32} />
-        </div>
-      </div>
+        {/* Skyline Banner */}
+        <motion.div variants={itemVariants}>
+          <CityscapeBanner />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

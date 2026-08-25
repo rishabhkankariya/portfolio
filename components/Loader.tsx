@@ -18,10 +18,10 @@ export default function Loader({ children }: LoaderProps) {
           clearInterval(interval);
           return 100;
         }
-        const diff = Math.random() > 0.4 ? 3 : 2;
+        const diff = Math.random() > 0.4 ? 4 : 2;
         return Math.min(prev + diff, 100);
       });
-    }, 25);
+    }, 20);
     return () => clearInterval(interval);
   }, []);
 
@@ -29,7 +29,7 @@ export default function Loader({ children }: LoaderProps) {
     if (progress === 100) {
       const timer = setTimeout(() => {
         setLoading(false);
-      }, 400);
+      }, 350);
       return () => clearTimeout(timer);
     }
   }, [progress]);
@@ -42,58 +42,58 @@ export default function Loader({ children }: LoaderProps) {
         <motion.div
           key="loader"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, y: -40 }}
-          transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#08070e] text-white overflow-hidden"
+          exit={{ opacity: 0, scale: 0.98, y: -20 }}
+          transition={{ duration: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#FFFDF5] text-[#1E293B] overflow-hidden"
         >
-          {/* Scanlines Background Texture */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.01)_50%,rgba(0,0,0,0.15)_50%)] bg-[size:100%_4px] pointer-events-none" />
+          {/* Strict Dot Grid Texture */}
+          <div className="absolute inset-0 bg-dot-grid opacity-60 pointer-events-none" />
 
-          {/* Futuristic Concentric Orbits Loader */}
-          <div className="relative w-32 h-32 mb-10 flex items-center justify-center">
+          {/* Playful Geometric Concentric Loader */}
+          <div className="relative w-28 h-28 mb-6 flex items-center justify-center">
             {/* Center Core dot */}
             <motion.div
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-              className="w-4 h-4 rounded-full bg-(--primary-color) shadow-[0_0_15px_var(--primary-color)]"
+              animate={{ scale: [1, 1.25, 1], rotate: [0, 90, 180, 270, 360] }}
+              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+              className="w-8 h-8 rounded-xl bg-[#8B5CF6] border-2 border-[#1E293B] shadow-[2px_2px_0px_0px_#1E293B]"
             />
-            
+
             {/* Inner Ring (Clockwise) */}
             <motion.div
               animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-              className="absolute w-16 h-16 rounded-full border-2 border-dashed border-(--primary-color) opacity-60"
+              transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
+              className="absolute w-16 h-16 rounded-full border-3 border-dashed border-[#FBBF24]"
             />
 
             {/* Middle Ring (Counter-Clockwise) */}
             <motion.div
               animate={{ rotate: -360 }}
-              transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
-              className="absolute w-24 h-24 rounded-full border border-dotted border-(--accent-pink) opacity-40"
+              transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
+              className="absolute w-24 h-24 rounded-full border-2 border-dotted border-[#F472B6]"
             />
 
-            {/* Outer Glow Ring (Clockwise) */}
+            {/* Outer Orbit */}
             <motion.div
               animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
-              className="absolute w-32 h-32 rounded-full border border-solid border-purple-500/20 border-t-purple-500/80 shadow-[0_0_20px_rgba(121,40,202,0.1)]"
+              transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
+              className="absolute w-32 h-32 rounded-full border-2 border-solid border-[#34D399]/40 border-t-[#34D399]"
             />
           </div>
 
           {/* Staggered Name Reveal */}
-          <div className="flex gap-[2px] mt-2">
+          <div className="flex gap-[3px] mt-2">
             {nameLetters.map((letter, idx) => (
               <motion.span
                 key={idx}
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  delay: idx * 0.04,
-                  duration: 0.4,
+                  delay: idx * 0.03,
+                  duration: 0.3,
                   ease: "easeOut",
                 }}
-                className={`text-xl sm:text-2xl font-bold tracking-widest font-mono ${
-                  letter === " " ? "w-3" : "text-(--primary-color)"
+                className={`text-xl sm:text-2xl font-black tracking-widest font-mono ${
+                  letter === " " ? "w-3" : "text-[#1E293B]"
                 }`}
               >
                 {letter}
@@ -101,43 +101,22 @@ export default function Loader({ children }: LoaderProps) {
             ))}
           </div>
 
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.6 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-            className="mt-3 text-xs tracking-[0.2em] uppercase font-mono opacity-60 text-gray-400"
-          >
-            Cloud & DevOps Explorer
-          </motion.p>
-
-          {/* Progress Bar Container */}
-          <div className="mt-12 w-48 h-[3px] bg-white/10 rounded-full overflow-hidden relative">
-            <div
-              className="h-full bg-gradient-to-r from-(--primary-color) to-(--accent-pink) transition-all duration-75"
-              style={{ width: `${progress}%` }}
-            />
+          {/* Tactile Hard Shadow Progress Bar */}
+          <div className="w-56 sm:w-72 mt-6">
+            <div className="w-full h-4 rounded-full bg-white border-2 border-[#1E293B] p-0.5 overflow-hidden shadow-[3px_3px_0px_0px_#1E293B]">
+              <motion.div
+                className="h-full bg-gradient-to-r from-[#8B5CF6] via-[#F472B6] to-[#FBBF24] rounded-full"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+            <div className="flex justify-between items-center text-[10px] font-mono font-black text-[#64748B] mt-2 uppercase tracking-wider">
+              <span>INITIALIZING SYSTEM</span>
+              <span className="text-[#8B5CF6]">{progress}%</span>
+            </div>
           </div>
-
-          {/* Progress Percentage Counter */}
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.8 }}
-            className="mt-2 text-xs font-mono tracking-widest text-gray-500"
-          >
-            {progress}%
-          </motion.span>
         </motion.div>
       ) : (
-        <motion.div
-          key="content"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="w-full min-h-screen"
-        >
-          {children}
-        </motion.div>
+        children
       )}
     </AnimatePresence>
   );

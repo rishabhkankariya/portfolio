@@ -1,38 +1,21 @@
 import type { Metadata } from "next";
-import { Archivo_Black, EB_Garamond, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
-import BackgroundCanvas from "@/components/BackgroundCanvas";
-import OrbitsBackground from "@/components/OrbitsBackground";
+import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
+import CommandPalette from "@/components/CommandPalette";
+import Header from "@/components/Header";
+import ParallaxBackground from "@/components/ParallaxBackground";
 
 export const metadata: Metadata = {
-  title: "Portfolio | Rishabh Kankariya",
-  description: "Cloud & DevOps Explorer",
+  title: "Rishabh Kankariya // Cloud & DevOps Engineer",
+  description: "Playful, high-performance portfolio of Rishabh Kankariya — Cloud Architectures, Kubernetes, CI/CD Automation, and Scalable Systems.",
   icons: {
     icon: "/images/rk.png",
     shortcut: "/images/rk.png",
     apple: "/images/rk.png", 
   },
 };
-
-const ebGaramond = EB_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-ebgaramond",
-});
-
-const archivoBlack = Archivo_Black({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-archivo-black",
-});
-
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-spacemono",
-});
 
 export default function RootLayout({
   children,
@@ -42,15 +25,27 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${ebGaramond.variable} ${spaceMono.variable} ${archivoBlack.variable}`}
       suppressHydrationWarning
+      className="light"
     >
-      <body>
+      <body className="antialiased max-w-full bg-[#FFFDF5] dark:bg-[#0F172A] text-[#1E293B] dark:text-[#F8FAFC] transition-colors duration-300">
         <ThemeProvider>
-          <OrbitsBackground />
-          <BackgroundCanvas />
-          <CustomCursor />
-          {children}
+          <SmoothScroll>
+            {/* Playful Geometric Dot Grid & Parallax Background */}
+            <ParallaxBackground />
+
+            {/* Global Command Palette (⌘K) */}
+            <CommandPalette />
+
+            {/* Custom Interactive Cursor */}
+            <CustomCursor />
+
+            {/* Playful Geometric Sticker Pill Header */}
+            <Header />
+
+            {/* Main Content */}
+            {children}
+          </SmoothScroll>
         </ThemeProvider>
       </body>
     </html>
