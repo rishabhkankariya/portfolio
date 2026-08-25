@@ -78,6 +78,13 @@ const educationHistory = [
     desc: "Completed with CGPA: 7.94. Built deep core competence in data structures, DBMS, computer networks, and operating systems.",
     tag: "CGPA: 7.94",
   },
+  {
+    title: "Govt. Excellence H.S. School, Ujjain",
+    degree: "Higher Secondary (PCM Science Stream)",
+    period: "Apr 2020 – Mar 2022",
+    desc: "Focused on analytical problem solving, Physics, Chemistry, and Mathematics.",
+    tag: "High School",
+  },
 ];
 
 export default function Scene05Experience() {
