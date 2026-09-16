@@ -1,0 +1,60 @@
+{
+  "roles": [
+    {
+      "company": "CodeAlpha",
+      "role": "Cloud Computing Intern",
+      "period": "May 2026 – Jun 2026",
+      "tag": "Cloud Intern",
+      "color": "#38BDF8",
+      "description": "Worked hands-on with cloud deployment workflows on Linux and Microsoft Azure configuring Nginx, Cloudflare, and SSL. Took Smart Bus Pass System and AI Chatbot Platform from build to live production hosting."
+    },
+    {
+      "company": "Zone Of Engineering Innovators (ZEN)",
+      "role": "Technical Secretary",
+      "period": "Feb 2026 – Present",
+      "tag": "Leadership",
+      "color": "#FBBF24",
+      "description": "Spearheaded technical workflows, campus-wide engineering initiatives, and student infrastructure development."
+    },
+    {
+      "company": "Techfest, IIT Bombay",
+      "role": "Campus Ambassador",
+      "period": "Jun 2026 – Present",
+      "tag": "Ambassador",
+      "color": "#F472B6",
+      "description": "Representing Asia's largest science and technology festival, driving technical engagements and student outreach."
+    },
+    {
+      "company": "Thinking Machines E-Learning Center",
+      "role": "Java Trainee",
+      "period": "Aug 2024 – Oct 2025",
+      "tag": "Trainee",
+      "color": "#8B5CF6",
+      "description": "Trained in Core and Advanced Java (OOP, JDBC, servlets, file I/O) and built backend mini-projects with database connectivity."
+    },
+    {
+      "company": "Allsoft Infotech & Multimedia Pvt. Ltd.",
+      "role": "Front-End Development Intern",
+      "period": "Nov 2024 – Jan 2025",
+      "tag": "Internship",
+      "color": "#34D399",
+      "description": "Built and debugged responsive, cross-browser web layouts with HTML/CSS, aligning front-end code with backend systems."
+    },
+    {
+      "company": "Manal Softech Pvt. Ltd.",
+      "role": "Web Development Intern",
+      "period": "Mar 2023 – Jun 2023",
+      "tag": "Internship",
+      "color": "#FBBF24",
+      "description": "Built responsive websites with HTML, CSS, and JavaScript, and collaborated on backend integration and cross-browser testing."
+    },
+    {
+      "company": "Programmers Point Software Training Institute",
+      "role": "Student Trainee",
+      "period": "Sep 2022 – Mar 2023",
+      "tag": "Trainee",
+      "color": "#38BDF8",
+      "description": "Built strong foundations in C and C++ pointers, memory management, and OOP through hands-on problem-solving."
+    }
+  ]
+}

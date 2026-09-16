@@ -1,0 +1,28 @@
+{
+  "categories": [
+    {
+      "name": "Cloud & Infrastructure",
+      "skills": ["AWS (EC2, S3, IAM, VPC)", "Microsoft Azure", "Docker", "Kubernetes", "Linux (Ubuntu/CentOS)", "Nginx Reverse Proxy", "Cloudflare", "SSL/TLS", "Terraform Basics"]
+    },
+    {
+      "name": "DevOps & CI/CD",
+      "skills": ["GitHub Actions", "Docker Compose", "Automated Testing", "Zero Downtime Deployments", "Containerization", "Monitoring & Logging", "System Telemetry"]
+    },
+    {
+      "name": "Programming Languages",
+      "skills": ["Java (Core & Advanced)", "Python", "TypeScript", "JavaScript (ES6+)", "C", "C++", "PHP", "SQL", "Bash/Shell"]
+    },
+    {
+      "name": "Frameworks & Libraries",
+      "skills": ["Next.js (App Router)", "React.js", "Node.js", "Express.js", "Tailwind CSS", "Framer Motion", "Bootstrap", "Prisma / TypeORM"]
+    },
+    {
+      "name": "Databases & Storage",
+      "skills": ["MySQL", "PostgreSQL", "MongoDB", "Redis", "AWS S3 Bucket Storage"]
+    },
+    {
+      "name": "Tools & Workflows",
+      "skills": ["Git", "GitHub", "Postman", "VS Code", "Linux CLI", "Vercel", "Render", "Cloudflare Pages"]
+    }
+  ]
+}

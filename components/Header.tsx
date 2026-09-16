@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaSun, FaMoon, FaBars, FaTimes } from "react-icons/fa";
+import { FaSun, FaMoon, FaBars, FaTimes, FaRobot } from "react-icons/fa";
 import { useTheme } from "@/contexts/ThemeContext";
 
 export default function Header() {
@@ -59,8 +59,20 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Quick Actions (Theme Switcher + Mobile Menu) */}
-          <div className="flex items-center gap-2.5">
+          {/* Quick Actions (AI Assistant + Theme Switcher + Mobile Menu) */}
+          <div className="flex items-center gap-2">
+            {/* AI Assistant Pill Button */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => window.dispatchEvent(new CustomEvent("open-ai-chatbot"))}
+              className="px-2.5 py-1 rounded-full bg-[#8B5CF6] text-white font-black text-[11px] flex items-center gap-1.5 border-2 border-[#1E293B] dark:border-white shadow-[2px_2px_0px_0px_#1E293B] dark:shadow-[2px_2px_0px_0px_#F8FAFC] cursor-pointer hover:bg-[#7C3AED] transition-colors"
+              title="Open AI Chatbot Assistant"
+            >
+              <FaRobot size={11} className="text-[#FBBF24]" />
+              <span className="hidden sm:inline">AI ASSISTANT</span>
+            </motion.button>
+
             {/* Playful Theme Switcher Button */}
             <motion.button
               whileHover={{ scale: 1.1, rotate: 8 }}

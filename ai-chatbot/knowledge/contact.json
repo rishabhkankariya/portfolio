@@ -1,0 +1,28 @@
+{
+  "name": "Rishabh Kankariya",
+  "email": "rishabhkankariya69@gmail.com",
+  "location": "Pune, India",
+  "resumeUrl": "/Profile (1).pdf",
+  "socials": [
+    {
+      "platform": "GitHub",
+      "username": "@rishabhkankariya",
+      "url": "https://github.com/rishabhkankariya"
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "/in/rishabh-kankariya",
+      "url": "https://www.linkedin.com/in/rishabh-kankariya-939a34257"
+    },
+    {
+      "platform": "Twitter / X",
+      "username": "@rishabhkankariya",
+      "url": "https://x.com/rishabhkankariya"
+    },
+    {
+      "platform": "Direct Email",
+      "username": "rishabhkankariya69@gmail.com",
+      "url": "mailto:rishabhkankariya69@gmail.com"
+    }
+  ]
+}

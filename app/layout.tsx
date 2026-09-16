@@ -6,6 +6,7 @@ import CustomCursor from "@/components/CustomCursor";
 import CommandPalette from "@/components/CommandPalette";
 import Header from "@/components/Header";
 import ParallaxBackground from "@/components/ParallaxBackground";
+import AiChatbotWidget from "@/components/AiChatbotWidget";
 
 export const metadata: Metadata = {
   title: "Rishabh Kankariya // Cloud & DevOps Engineer",
@@ -45,6 +46,9 @@ export default function RootLayout({
 
             {/* Main Content */}
             {children}
+
+            {/* Interactive Draggable AI Portfolio Assistant Widget */}
+            <AiChatbotWidget />
           </SmoothScroll>
         </ThemeProvider>
       </body>

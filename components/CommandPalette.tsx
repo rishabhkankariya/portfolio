@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaSearch, FaTimes, FaSun, FaMoon, FaFileDownload, FaGithub, FaEnvelope, FaCode, FaGraduationCap, FaCertificate, FaTools, FaHome } from "react-icons/fa";
+import { FaSearch, FaTimes, FaSun, FaMoon, FaFileDownload, FaGithub, FaEnvelope, FaCode, FaGraduationCap, FaCertificate, FaTools, FaHome, FaRobot } from "react-icons/fa";
 import { useTheme } from "@/contexts/ThemeContext";
 
 export default function CommandPalette() {
@@ -33,6 +33,16 @@ export default function CommandPalette() {
   }, [isOpen]);
 
   const actions = [
+    {
+      id: "ai-assistant",
+      title: "Ask Rishabh's AI Assistant",
+      icon: <FaRobot size={15} className="text-[#8B5CF6]" />,
+      category: "AI & Actions",
+      run: () => {
+        window.dispatchEvent(new CustomEvent("open-ai-chatbot"));
+        setIsOpen(false);
+      },
+    },
     {
       id: "hero",
       title: "Go to Home / Hero",

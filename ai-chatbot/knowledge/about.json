@@ -1,0 +1,28 @@
+{
+  "name": "Rishabh Kankariya",
+  "headline": "Cloud & DevOps Engineer",
+  "status": "Available for Opportunities",
+  "location": "Pune, India",
+  "bio": "B.Tech Computer Science and Engineering student at MIT-ADT University and Technical Secretary at the Zone of Engineering Innovators (ZEN). Passionate about cloud-native paradigms, container orchestration, CI/CD automation, and building self-healing, scalable infrastructure.",
+  "education": {
+    "degree": "B.Tech in Computer Science and Engineering",
+    "institution": "MIT-ADT University, Pune",
+    "status": "Undergraduate",
+    "focus": "Cloud Computing, Distributed Systems, Software Engineering, DevOps"
+  },
+  "leadership": [
+    {
+      "role": "Technical Secretary",
+      "organization": "Zone Of Engineering Innovators (ZEN)",
+      "period": "Feb 2026 – Present",
+      "summary": "Spearheaded technical workflows, campus-wide engineering initiatives, and student infrastructure development."
+    },
+    {
+      "role": "Campus Ambassador",
+      "organization": "Techfest, IIT Bombay",
+      "period": "Jun 2026 – Present",
+      "summary": "Representing Asia's largest science and technology festival, driving technical engagements and student outreach."
+    }
+  ],
+  "philosophy": "Modern software infrastructure must be self-healing, cost-efficient, and secure by default. Zero downtime deployments and resilient cloud architectures are the backbone of modern applications."
+}

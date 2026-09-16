@@ -1,0 +1,73 @@
+{
+  "featuredProjects": [
+    {
+      "id": "smart-bus-pass",
+      "name": "Smart Bus Pass System",
+      "category": "Cloud & DevOps",
+      "description": "A complete cloud-native digital pass platform deployed on Microsoft Azure, Linux, Nginx, and SSL with secure session authentication, Razorpay gateway integration, automated PDF receipt generation, and admin metric dashboards.",
+      "technologies": ["React", "JavaScript", "MySQL", "AWS", "Azure", "Docker", "Linux", "Nginx", "Razorpay"],
+      "liveUrl": "https://smart-bus-pass-system.pages.dev/",
+      "githubUrl": "https://github.com/rishabhkankariya/bus-pass-system",
+      "highlights": [
+        "Deployed on Microsoft Azure with Linux & Nginx reverse proxy",
+        "Cloudflare SSL/TLS security & zero downtime architecture",
+        "Razorpay automated payments & digital receipt engine"
+      ]
+    },
+    {
+      "id": "ai-chatbot-platform",
+      "name": "AI Chatbot Platform",
+      "category": "AI & Automation",
+      "description": "Built and deployed a login-enabled AI chatbot platform with secure cloud hosting, knowledge base embeddings, user session persistence, and database integration.",
+      "technologies": ["React", "JavaScript", "Python", "AWS", "Docker", "Node.js", "Gemini AI"],
+      "liveUrl": "https://ai-chatbot-system-by-rishabhkankariya.pages.dev/",
+      "githubUrl": "https://github.com/rishabhkankariya",
+      "highlights": [
+        "Containerized with Docker for cloud deployment",
+        "Multi-turn conversational context & session persistence",
+        "Multi-provider LLM fallback architecture"
+      ]
+    },
+    {
+      "id": "student-institute-portal",
+      "name": "Student-Institute Portal (eKitabhGhar)",
+      "category": "Full-Stack",
+      "description": "Full-stack student-institute portal featuring student registration management, document verification, admin approval workflows, and interactive administrative dashboards.",
+      "technologies": ["PHP", "MySQL", "JavaScript", "React", "Bootstrap"],
+      "liveUrl": "https://ekitabhghar-project.onrender.com/",
+      "githubUrl": "https://github.com/rishabhkankariya",
+      "highlights": [
+        "End-to-end document verification workflow",
+        "Role-based access control for students & admins",
+        "Secure relational data storage on MySQL"
+      ]
+    },
+    {
+      "id": "personal-portfolio",
+      "name": "Personal Portfolio Website",
+      "category": "Front-End & UI/UX",
+      "description": "Designed and deployed a responsive personal portfolio with Tailwind CSS, Framer Motion micro-interactions, dark mode toggle, and zero-latency custom cursor tracking.",
+      "technologies": ["Next.js", "TypeScript", "React", "Tailwind CSS", "Framer Motion"],
+      "liveUrl": "https://rishabhkankariya.pages.dev/",
+      "githubUrl": "https://github.com/rishabhkankariya",
+      "highlights": [
+        "Kinetic typography and custom 3D canvas effects",
+        "Responsive neobrutalist playful design system",
+        "Embedded AI chatbot assistant widget"
+      ]
+    },
+    {
+      "id": "zen-project-hub",
+      "name": "ZEN Project Hub",
+      "category": "DevOps & Collaboration",
+      "description": "Campus engineering project hub coordinating multi-department student initiatives, technical workshops, and cloud resource tracking under ZEN.",
+      "technologies": ["React", "Node.js", "Docker", "GitHub Actions"],
+      "liveUrl": "https://github.com/rishabhkankariya",
+      "githubUrl": "https://github.com/rishabhkankariya",
+      "highlights": [
+        "Automated deployment pipelines with GitHub Actions",
+        "Centralized project tracking for engineering students"
+      ]
+    }
+  ]
+}
