@@ -26,9 +26,9 @@ export default function Header() {
         transition={{ duration: 0.5, ease: [0.34, 1.56, 0.64, 1] }}
         className="fixed top-2.5 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 pointer-events-none"
       >
-        <div className="w-full max-w-3xl flex items-center justify-between px-4 py-1.5 rounded-full bg-[#FFFDF5] dark:bg-[#1E293B] border-2 border-[#1E293B] dark:border-white shadow-[3px_3px_0px_0px_#1E293B] dark:shadow-[3px_3px_0px_0px_#F8FAFC] pointer-events-auto transition-all">
+        <div className="w-full max-w-4xl flex items-center justify-between px-4 sm:px-5 py-2 rounded-full bg-[#FFFDF5] dark:bg-[#1E293B] border-2 border-[#1E293B] dark:border-white shadow-[3px_3px_0px_0px_#1E293B] dark:shadow-[3px_3px_0px_0px_#F8FAFC] pointer-events-auto transition-all">
           {/* Brand Monogram Sticker Pill */}
-          <Link href="#hero" className="flex items-center gap-2.5 group">
+          <Link href="#hero" className="flex items-center gap-2.5 group shrink-0">
             <div className="w-7 h-7 rounded-full bg-[#8B5CF6] border-2 border-[#1E293B] flex items-center justify-center text-white text-xs font-black shadow-[2px_2px_0px_0px_#1E293B] group-hover:rotate-12 transition-transform">
               RK
             </div>
@@ -43,12 +43,12 @@ export default function Header() {
           </Link>
 
           {/* Playful Geometric Navigation Pills */}
-          <nav className="hidden md:flex items-center gap-2 text-xs font-extrabold tracking-wider">
+          <nav className="hidden md:flex items-center gap-1.5 lg:gap-2.5 text-xs font-extrabold tracking-wider">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className={`px-3.5 py-1.5 rounded-full transition-all duration-200 border-2 ${
+                className={`px-3 py-1.5 rounded-full transition-all duration-200 border-2 whitespace-nowrap ${
                   item.isContact
                     ? "bg-[#FBBF24] text-[#1E293B] border-[#1E293B] shadow-[2px_2px_0px_0px_#1E293B] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[3px_3px_0px_0px_#1E293B]"
                     : "border-transparent text-[#1E293B] dark:text-[#F8FAFC] hover:border-[#1E293B] dark:hover:border-white hover:bg-[#F472B6]/15 hover:shadow-[2px_2px_0px_0px_#1E293B] dark:hover:shadow-[2px_2px_0px_0px_#F8FAFC]"
@@ -60,17 +60,20 @@ export default function Header() {
           </nav>
 
           {/* Quick Actions (AI Assistant + Theme Switcher + Mobile Menu) */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+            {/* Divider between nav links and actions */}
+            <div className="h-4 w-[2px] bg-[#1E293B]/20 dark:bg-white/20 hidden md:block mx-0.5 rounded-full" />
+
             {/* AI Assistant Pill Button */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => window.dispatchEvent(new CustomEvent("open-ai-chatbot"))}
-              className="px-2.5 py-1 rounded-full bg-[#8B5CF6] text-white font-black text-[11px] flex items-center gap-1.5 border-2 border-[#1E293B] dark:border-white shadow-[2px_2px_0px_0px_#1E293B] dark:shadow-[2px_2px_0px_0px_#F8FAFC] cursor-pointer hover:bg-[#7C3AED] transition-colors"
+              className="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-[#8B5CF6] text-white font-black text-xs tracking-wide flex items-center gap-1.5 border-2 border-[#1E293B] dark:border-white shadow-[2px_2px_0px_0px_#1E293B] dark:shadow-[2px_2px_0px_0px_#F8FAFC] cursor-pointer hover:bg-[#7C3AED] transition-all shrink-0"
               title="Open AI Chatbot Assistant"
             >
-              <FaRobot size={11} className="text-[#FBBF24]" />
-              <span className="hidden sm:inline">AI ASSISTANT</span>
+              <FaRobot size={12} className="text-[#FBBF24] shrink-0" />
+              <span>AI ASSISTANT</span>
             </motion.button>
 
             {/* Playful Theme Switcher Button */}
@@ -78,7 +81,7 @@ export default function Header() {
               whileHover={{ scale: 1.1, rotate: 8 }}
               whileTap={{ scale: 0.9 }}
               onClick={toggleTheme}
-              className="w-8 h-8 rounded-full bg-[#FBBF24] border-2 border-[#1E293B] dark:border-white shadow-[2px_2px_0px_0px_#1E293B] dark:shadow-[2px_2px_0px_0px_#F8FAFC] text-[#1E293B] flex items-center justify-center cursor-pointer transition-colors"
+              className="w-8 h-8 rounded-full bg-[#FBBF24] border-2 border-[#1E293B] dark:border-white shadow-[2px_2px_0px_0px_#1E293B] dark:shadow-[2px_2px_0px_0px_#F8FAFC] text-[#1E293B] flex items-center justify-center cursor-pointer transition-colors shrink-0"
               aria-label="Toggle Theme"
             >
               {theme === "dark" ? <FaSun size={13} /> : <FaMoon size={12} />}
@@ -87,7 +90,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden w-8 h-8 rounded-full bg-white dark:bg-[#334155] text-[#1E293B] dark:text-white border-2 border-[#1E293B] dark:border-white shadow-[2px_2px_0px_0px_#1E293B] flex items-center justify-center cursor-pointer"
+              className="md:hidden w-8 h-8 rounded-full bg-white dark:bg-[#334155] text-[#1E293B] dark:text-white border-2 border-[#1E293B] dark:border-white shadow-[2px_2px_0px_0px_#1E293B] flex items-center justify-center cursor-pointer shrink-0"
               aria-label="Toggle Mobile Menu"
             >
               {mobileMenuOpen ? <FaTimes size={13} /> : <FaBars size={13} />}
@@ -117,6 +120,18 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
+
+              {/* Mobile AI Assistant Button */}
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  window.dispatchEvent(new CustomEvent("open-ai-chatbot"));
+                }}
+                className="px-4 py-2.5 rounded-2xl bg-[#8B5CF6] text-white font-extrabold flex items-center justify-center gap-2 border-2 border-[#1E293B] dark:border-white shadow-[3px_3px_0px_0px_#1E293B] cursor-pointer"
+              >
+                <FaRobot size={15} className="text-[#FBBF24]" />
+                <span>OPEN AI ASSISTANT</span>
+              </button>
             </div>
 
             <div className="pt-4 border-t-2 border-dashed border-[#1E293B]/20 flex items-center justify-between text-xs font-mono font-bold">
