@@ -36,7 +36,7 @@ const socials = [
   {
     name: "Direct Email",
     handle: "rishabhkankariya69",
-    url: "mailto:rishabhkankariya69@gmail.com",
+    url: "mailto:rishabhkankariya53@gmail.com",
     icon: <FaEnvelope size={20} />,
     color: "#8B5CF6",
     textColor: "#FFFFFF",
@@ -52,7 +52,7 @@ export default function Scene09Contact() {
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("rishabhkankariya69@gmail.com");
+    navigator.clipboard.writeText("rishabhkankariya53@gmail.com");
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
   };
@@ -83,7 +83,7 @@ export default function Scene09Contact() {
       setMessage("");
     } catch (err) {
       console.error("Form error:", err);
-      window.location.href = `mailto:rishabhkankariya69@gmail.com?subject=Inquiry%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message)}`;
+      window.location.href = `mailto:rishabhkankariya53@gmail.com?subject=Inquiry%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message)}`;
     } finally {
       setIsSubmitting(false);
     }
@@ -133,7 +133,7 @@ export default function Scene09Contact() {
                       EMAIL ADDRESS
                     </div>
                     <div className="text-sm font-black text-[#1E293B] dark:text-white break-all font-mono">
-                      rishabhkankariya69@gmail.com
+                      rishabhkankariya53@gmail.com
                     </div>
                   </div>
                 </div>

@@ -143,13 +143,13 @@ export const PORTFOLIO_DATA = {
     },
   ],
   contact: {
-    email: "rishabhkankariya69@gmail.com",
+    email: "rishabhkankariya53@gmail.com",
     resumeUrl: "/Profile (1).pdf",
     socials: [
       { name: "GitHub", handle: "@rishabhkankariya", url: "https://github.com/rishabhkankariya" },
       { name: "LinkedIn", handle: "/in/rishabh-kankariya", url: "https://www.linkedin.com/in/rishabh-kankariya-939a34257" },
       { name: "Twitter / X", handle: "@rishabhkankariya", url: "https://x.com/rishabhkankariya" },
-      { name: "Direct Email", handle: "rishabhkankariya69@gmail.com", url: "mailto:rishabhkankariya69@gmail.com" },
+      { name: "Direct Email", handle: "rishabhkankariya53@gmail.com", url: "mailto:rishabhkankariya53@gmail.com" },
     ],
   },
 };
@@ -224,7 +224,7 @@ export async function processPortfolioQuery(
       case "PORTFOLIO.get_contact":
         return {
           type: "CARD",
-          message: "You can reach Rishabh directly via email at rishabhkankariya69@gmail.com or connect across his developer networks:",
+          message: "You can reach Rishabh directly via email at rishabhkankariya53@gmail.com or connect across his developer networks:",
           data: PORTFOLIO_DATA.contact,
           sources: ["Contact Registry"],
           verified: true,

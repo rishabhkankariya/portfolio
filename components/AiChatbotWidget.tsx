@@ -230,7 +230,7 @@ export default function AiChatbotWidget() {
     }
   };
 
-  const handleCopyEmail = (email = "rishabhkankariya69@gmail.com") => {
+  const handleCopyEmail = (email = "rishabhkankariya53@gmail.com") => {
     navigator.clipboard.writeText(email);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);

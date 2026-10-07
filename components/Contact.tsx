@@ -14,7 +14,7 @@ export default function Contact() {
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("rishabhkankariya69@gmail.com");
+    navigator.clipboard.writeText("rishabhkankariya53@gmail.com");
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
   };
@@ -47,7 +47,7 @@ export default function Contact() {
     } catch (err) {
       console.error("Form submit error:", err);
       // Fallback: trigger mailto if offline
-      window.location.href = `mailto:rishabhkankariya69@gmail.com?subject=Portfolio%20Message%20from%20${encodeURIComponent(
+      window.location.href = `mailto:rishabhkankariya53@gmail.com?subject=Portfolio%20Message%20from%20${encodeURIComponent(
         name
       )}&body=${encodeURIComponent(message)}`;
     } finally {
@@ -75,7 +75,7 @@ export default function Contact() {
                   <div>
                     <div className="text-[11px] font-mono uppercase tracking-wider text-(--text-muted)">Email Address</div>
                     <div className="text-sm font-bold text-(--text-color) break-all">
-                      rishabhkankariya69@gmail.com
+                      rishabhkankariya53@gmail.com
                     </div>
                   </div>
                 </div>

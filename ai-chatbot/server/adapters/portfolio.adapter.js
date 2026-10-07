@@ -65,7 +65,7 @@ class PortfolioAdapter {
     const contact = readJson('contact.json') || {};
     return {
       name: contact.name || 'Rishabh Kankariya',
-      email: contact.email || 'rishabhkankariya69@gmail.com',
+      email: contact.email || 'rishabhkankariya53@gmail.com',
       location: contact.location || 'Pune, India',
       resumeUrl: contact.resumeUrl || '/Profile (1).pdf',
       socials: contact.socials || [],

@@ -24,7 +24,7 @@ const RESPONSE_TYPE_BY_ACTION = {
 };
 
 const CREDENTIAL_REFUSAL =
-  "I don't collect or store private credentials or passwords. For inquiries, feel free to email Rishabh directly at rishabhkankariya69@gmail.com.";
+  "I don't collect or store private credentials or passwords. For inquiries, feel free to email Rishabh directly at rishabhkankariya53@gmail.com.";
 
 function loadKnowledge(fileName) {
   if (!fileName) return null;

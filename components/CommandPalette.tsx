@@ -139,7 +139,7 @@ export default function CommandPalette() {
       icon: <FaEnvelope size={15} />,
       category: "Actions",
       run: () => {
-        navigator.clipboard.writeText("rishabhkankariya69@gmail.com");
+        navigator.clipboard.writeText("rishabhkankariya53@gmail.com");
         alert("Email copied to clipboard!");
         setIsOpen(false);
       },

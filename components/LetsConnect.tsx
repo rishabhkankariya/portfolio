@@ -40,9 +40,9 @@ const socialLinks = [
   },
   {
     name: "Email",
-    handle: "rishabhkankariya69@gmail.com",
+    handle: "rishabhkankariya53@gmail.com",
     description: "Direct Project Inquiry",
-    url: "mailto:rishabhkankariya69@gmail.com",
+    url: "mailto:rishabhkankariya53@gmail.com",
     icon: <FaEnvelope size={24} className="text-white" />,
     badgeBg: "bg-gradient-to-br from-[#EA4335] to-[#F59E0B] text-white shadow-[0_4px_16px_rgba(245,158,11,0.4)]",
     cardGlow: "rgba(245, 158, 11, 0.25)",
